@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import loading from "./loading.gif";
-export default class Loading extends Component {
-  render() {
-    return (
-      <div className="text-center">
-        <img src={loading} style={{ width: "40px" }} alt="loading" />
-      </div>
-    );
-  }
-}
+const Loading = () => {
+  return (
+    <div className="text-center">
+      <img src={loading} style={{ width: "40px" }} alt="loading" />
+    </div>
+  );
+};
+
+export default Loading;

@@ -28,7 +28,7 @@ export default class News extends Component {
   }
 
   async updateNews() {
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=89f8dc737687481f82543072ef637600&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -44,9 +44,7 @@ export default class News extends Component {
     console.log("prev");
     let url = `https://newsapi.org/v2/top-headlines?country=${
       this.props.country
-    }&category=${
-      this.props.category
-    }&apiKey=89f8dc737687481f82543072ef637600&page=${
+    }&category=${this.props.category}&apiKey=&page=${
       this.state.page - 1
     }&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
@@ -66,9 +64,7 @@ export default class News extends Component {
   handleNextClick = async () => {
     let url = `https://newsapi.org/v2/top-headlines?country=${
       this.props.country
-    }&category=${
-      this.props.category
-    }&apiKey=89f8dc737687481f82543072ef637600&page=${
+    }&category=${this.props.category}&apiKey=&page=${
       this.state.page + 1
     }&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
@@ -88,7 +84,7 @@ export default class News extends Component {
 
   async componentDidMount() {
     console.log("cdm");
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=89f8dc737687481f82543072ef637600&page=1&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=&page=1&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
